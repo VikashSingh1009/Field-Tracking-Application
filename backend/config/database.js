@@ -26,7 +26,14 @@ const sequelize = new Sequelize(
             idle:    10000  
         },
 
-        logging: false    //don't show sql queries in console
+        logging: false,
+
+        dialectOptions: {
+            ssl: {
+            require: true,
+            rejectUnauthorized: false
+            }
+        }   //don't show sql queries in console
     }
 );
 
