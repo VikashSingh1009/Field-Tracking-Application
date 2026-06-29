@@ -50,8 +50,17 @@ const LoginForm = () => {
       } else {
         setError(res.message || "Login failed");
       }
-    } catch {
-      setError("Server unreachable");
+    } catch (err) {
+      console.log(err);
+      console.log(err.response);
+      console.log(err.response?.data);
+
+      setError(
+      err.response?.data?.message ||
+      err.message ||
+      "Server unreachable"
+      );
+      
     } finally {
       setLoading(false);
     }
