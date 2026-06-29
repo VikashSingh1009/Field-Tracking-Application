@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'http://192.168.1.17:5000/api', // backend same rehega
+    baseURL: 'https://field-tracking-application.onrender.com/api', // backend same rehega
    
     timeout: 15000
 });
